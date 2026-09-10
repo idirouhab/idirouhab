@@ -1,0 +1,101 @@
+{
+  "estado": "reproduced",
+  "tipo": "Prueba automatizada local del CLI; dos releases completas",
+  "inicio_utc": "2026-09-10T07:14:44.931709+00:00",
+  "fin_utc": "2026-09-10T07:14:51.048804+00:00",
+  "duracion_segundos": 6.118,
+  "entorno": {
+    "plataforma": "macOS Apple Silicon",
+    "python": "3.9.13",
+    "chromium_pruebas": "145.0.7632.6",
+    "paginas": "Servidor HTTP loopback con JSON sintetico"
+  },
+  "script": {
+    "archivo": "reproduce.py",
+    "sha256": "18f29588ca88295ca3af5068f97bff216b2076aa8dee282394f1f200593c81c4",
+    "variante": "Ruta de Chromium como argumento; copia exacta del script verificado"
+  },
+  "comandos": {
+    "total": 20,
+    "todos_codigo_salida_cero": true
+  },
+  "resultados_por_version": {
+    "0.36.0": {
+      "version_reportada": "agent-browser 0.36.0",
+      "binario_sha256_esperado": "b2106ab39db0838e7b1772f7f26f760518de56d09053150c56f9dddf15af997d",
+      "binario_sha256_observado": "b2106ab39db0838e7b1772f7f26f760518de56d09053150c56f9dddf15af997d",
+      "hash_verificado": true,
+      "commit_tag": "eb05921bad874cd2a1b4fa5d1149f1ed26576cae",
+      "binario_url": "https://github.com/vercel-labs/agent-browser/releases/download/v0.36.0/agent-browser-darwin-arm64",
+      "control_pestana_principal_correcto": true,
+      "pestana_nueva_hereda_ambos": false,
+      "primeros_get": {
+        "baseline": {
+          "orden_en_log": 3,
+          "ruta_http_sintetica": "/v0360/baseline",
+          "cabeceras": {
+            "user-agent": "ab-tab-new-test/1.0",
+            "x-global": "global"
+          }
+        },
+        "first-new-tab": {
+          "orden_en_log": 5,
+          "ruta_http_sintetica": "/v0360/first-new-tab",
+          "cabeceras": {
+            "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.0.0 Safari/537.36",
+            "x-global": null
+          }
+        }
+      }
+    },
+    "0.37.0": {
+      "version_reportada": "agent-browser 0.37.0",
+      "binario_sha256_esperado": "da5a2b4ef7be8ba279b1258c542c33877f480b1951d0d94de607fc1528edd380",
+      "binario_sha256_observado": "da5a2b4ef7be8ba279b1258c542c33877f480b1951d0d94de607fc1528edd380",
+      "hash_verificado": true,
+      "commit_tag": "471ab3852b47b98847f1d9c855c272bb62d0d50b",
+      "binario_url": "https://github.com/vercel-labs/agent-browser/releases/download/v0.37.0/agent-browser-darwin-arm64",
+      "control_pestana_principal_correcto": true,
+      "pestana_nueva_hereda_ambos": true,
+      "primeros_get": {
+        "baseline": {
+          "orden_en_log": 9,
+          "ruta_http_sintetica": "/v0370/baseline",
+          "cabeceras": {
+            "user-agent": "ab-tab-new-test/1.0",
+            "x-global": "global"
+          }
+        },
+        "first-new-tab": {
+          "orden_en_log": 11,
+          "ruta_http_sintetica": "/v0370/first-new-tab",
+          "cabeceras": {
+            "user-agent": "ab-tab-new-test/1.0",
+            "x-global": "global"
+          }
+        }
+      }
+    }
+  },
+  "cierre": {
+    "procesos_propios_restantes": 0,
+    "servidor_sigue_escuchando": false
+  },
+  "fuentes": {
+    "pr": "https://github.com/vercel-labs/agent-browser/pull/1777",
+    "merge_commit": "219c47a9dab1776f320d11e66ce934fd239b2cb7",
+    "test_oficial": "https://github.com/vercel-labs/agent-browser/blob/219c47a9dab1776f320d11e66ce934fd239b2cb7/cli/src/native/e2e_tests.rs#L7907"
+  },
+  "limites": [
+    "Comparacion entre releases completas; no aisla un unico commit ni fecha la introduccion del fallo",
+    "Dos campos y primera peticion de tab new en HTTP local, con el mismo Chromium",
+    "Sin validacion de produccion, cuentas externas, otros navegadores o todas las preferencias",
+    "No se capturo exhaustivamente el trafico de fondo del navegador"
+  ],
+  "preparacion": {
+    "intento_sandbox": "Fallo al abrir servidor loopback antes de lanzar navegador",
+    "primer_runner": "Control user-agent invalido al omitir el flag en llamadas posteriores; conservado y corregido",
+    "repeticion_original": "Valida",
+    "variante_parametrizada": "Valida; es la distribuida"
+  }
+}
