@@ -8,6 +8,7 @@ I share experiments with Codex, AI agents and automation in English and Spanish.
 
 ## Public work
 
+- [agent-browser new-tab test](https://github.com/idirouhab/idirouhab/tree/main/experiments/agent-browser-new-tab): a local comparison of 0.36.0 and 0.37.0, with a reproducible script and recorded results. Prepared with Codex; instructions in English and Spanish.
 - [ImageGen and Codex](https://x.com/idir_ouhab/status/2062630617968157025): an example I shared of starting with a visual mockup.
 - [AI harness](https://www.idir.ai/es/blog/ai-harness-capa-control-modelo-inteligente-trabajo-util): an article in Spanish about tools, permissions, approvals and verification around an agent.
 
@@ -24,3 +25,4 @@ All three courses are in Spanish:
 Trabajo en OpenAI, antes estuve en n8n y soy profesor de tres cursos de n8n en Platzi. En [X](https://x.com/idir_ouhab) comparto lo que voy probando con Codex, agentes y automatizaciones. También escribo en [idir.ai](https://www.idir.ai/es) y hago [Prompt & Play](https://www.youtube.com/@Prompt_and_Play).
 
 This is my personal profile. The linked projects and writing are public work.
+
